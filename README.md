@@ -1,70 +1,219 @@
-# Getting Started with Create React App
+🎯 ASMAKA - Sistem Aspirasi KMK
+<div align="center">
+https://img.shields.io/badge/React-18.2.0-61DAFB?style=for-the-badge&logo=react
+https://img.shields.io/badge/Firebase-9.9.4-FFCA28?style=for-the-badge&logo=firebase
+https://img.shields.io/badge/Tailwind-3.1.8-38B2AC?style=for-the-badge&logo=tailwind-css
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🚀 Live Demo •
+📖 Dokumentasi •
+💻 Installation •
+👥 Usage
 
-## Available Scripts
+</div>
+📋 Tentang Proyek
+ASMAKA (Aspirasi Masyarakat KMK) adalah aplikasi web modern untuk komunitas KMK yang memungkinkan pengiriman aspirasi secara anonim, aman, dan transparan.
 
-In the project directory, you can run:
+Dokumentasi
+🎯 Fitur Utama
+🔒 Anonimitas - Identitas pengirim terjaga
 
-### `npm start`
+📊 Rating System - Penilaian 1-5 untuk kinerja KMK
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+⚡ Real-time - Update data otomatis dengan Firebase
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+📱 Responsive - Optimal di semua device
 
-### `npm test`
+🏗️ Tech Stack
+Frontend:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+React.js 18.2.0
 
-### `npm run build`
+Tailwind CSS 3.1.8
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+React Router DOM 6.3.0
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Backend:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Firebase Firestore (Database)
 
-### `npm run eject`
+Firebase Authentication (Login Admin)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Firebase Hosting (Deployment)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+⬆️ Back to top
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Installation
+Prerequisites
+Node.js version 14 atau lebih tinggi
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+npm atau yarn
 
-## Learn More
+Akun Firebase
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+🚀 Quick Start
+bash
+# Clone repository
+git clone https://github.com/RAsertaCK/Project-A.git
+cd Project-A
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Install dependencies
+npm install
 
-### Code Splitting
+# Jalankan development server
+npm start
+🔧 Setup Firebase
+Buat Firebase Project:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Buka Firebase Console
 
-### Analyzing the Bundle Size
+Klik "Create Project" - beri nama "ASMAKA"
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Ikuti setup wizard
 
-### Making a Progressive Web App
+Aktifkan Services:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Authentication → Sign-in method → Enable Email/Password
 
-### Advanced Configuration
+Firestore Database → Create Database → Start in test mode
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Tambahkan admin user di Authentication → Users
 
-### Deployment
+Environment Variables:
+Buat file .env.local di root project:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+env
+REACT_APP_FIREBASE_API_KEY=your_api_key
+REACT_APP_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
+REACT_APP_FIREBASE_PROJECT_ID=your-project-id
+REACT_APP_FIREBASE_STORAGE_BUCKET=your-project.appspot.com
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+REACT_APP_FIREBASE_APP_ID=your_app_id
+⬆️ Back to top
 
-### `npm run build` fails to minify
+Usage
+👤 Untuk Pengguna Biasa
+Akses Aplikasi:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Buka https://asmaka-c22de.web.app
+
+Atau http://localhost:3000 (development)
+
+Kirim Aspirasi:
+
+Klik "Kirim Aspirasi" di navbar
+
+Isi semua field form dengan jujur
+
+Klik "Kirim Aspirasi" - status: pending
+
+Lihat Aspirasi:
+
+Buka halaman utama
+
+Lihat aspirasi yang sudah disetujui admin
+
+🔐 Untuk Administrator
+Login Admin:
+
+Akses /admin di browser
+
+Login dengan email/password admin
+
+Masuk ke dashboard moderasi
+
+Moderasi Aspirasi:
+
+Lihat daftar aspirasi pending
+
+Klik "Lihat" untuk baca detail
+
+Approve/Reject dengan tombol aksi
+
+Aspirasi approved akan tampil di publik
+
+Management Data:
+
+Filter by status (all, pending, approved, rejected)
+
+Hapus aspirasi jika diperlukan
+
+Pantau statistics sederhana
+
+⬆️ Back to top
+
+Deployment
+🚀 Firebase Hosting
+bash
+# Build production version
+npm run build
+
+# Install Firebase CLI
+npm install -g firebase-tools
+
+# Login dan deploy
+firebase login
+firebase init hosting
+firebase deploy
+🔒 Production Checklist
+Firebase Security Rules updated
+
+Environment variables configured
+
+Admin user created
+
+Test semua functionality
+
+🌐 Custom Domain (Optional)
+Buka Firebase Console → Hosting
+
+Add custom domain
+
+Update DNS records
+
+⬆️ Back to top
+
+🤝 Contributing
+Kontribusi dipersilakan! Ikuti steps:
+
+Fork repository
+
+Buat feature branch:
+
+bash
+git checkout -b feature/nama-feature
+Commit changes:
+
+bash
+git commit -m 'Add nama feature'
+Push ke branch:
+
+bash
+git push origin feature/nama-feature
+Buat Pull Request
+
+📄 License
+MIT License - bebas digunakan untuk personal dan komersial.
+
+👨‍💻 Developer
+RAsertaCK
+
+GitHub: https://github.com/RAsertaCK
+
+Project: https://github.com/RAsertaCK/Project-A
+
+🙏 Acknowledgments
+React.js Team untuk framework yang amazing
+
+Tailwind CSS untuk utility-first CSS
+
+Firebase Team untuk backend services
+
+KMK Community untuk inspirasi
+
+<div align="center">
+❓ Butuh Bantuan?
+Buka GitHub Issues untuk report bugs atau request features.
+
+⭐ Jangan lupa kasih star jika project ini membantu!
+
+</div>
