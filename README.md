@@ -1,57 +1,47 @@
-🎯 ASMAKA - Sistem Aspirasi KMK
-<div align="center">
-https://img.shields.io/badge/React-18.2.0-61DAFB?style=for-the-badge&logo=react
-https://img.shields.io/badge/Firebase-9.9.4-FFCA28?style=for-the-badge&logo=firebase
-https://img.shields.io/badge/Tailwind-3.1.8-38B2AC?style=for-the-badge&logo=tailwind-css
+# 🎯 ASMAKA - Sistem Aspirasi KMK
 
-🚀 Live Demo •
-📖 Dokumentasi •
-💻 Installation •
-👥 Usage
+<div align="center">
+
+<img src="https://img.shields.io/badge/React-18.2.0-61DAFB?style=for-the-badge&logo=react" alt="React">
+<img src="https://img.shields.io/badge/Firebase-9.9.4-FFCA28?style=for-the-badge&logo=firebase" alt="Firebase">
+<img src="https://img.shields.io/badge/Tailwind-3.1.8-38B2AC?style=for-the-badge&logo=tailwind-css" alt="Tailwind">
+
+<br>
+🚀 **Live Demo** • 📖 **Dokumentasi** • 💻 **Installation** • 👥 **Usage**
 
 </div>
-📋 Tentang Proyek
+
+## 📋 Tentang Proyek
 ASMAKA (Aspirasi Masyarakat KMK) adalah aplikasi web modern untuk komunitas KMK yang memungkinkan pengiriman aspirasi secara anonim, aman, dan transparan.
 
-Dokumentasi
-🎯 Fitur Utama
-🔒 Anonimitas - Identitas pengirim terjaga
+## 🎯 Fitur Utama
+- 🔒 **Anonimitas** - Identitas pengirim terjaga
+- 📊 **Rating System** - Penilaian 1-5 untuk kinerja KMK  
+- ⚡ **Real-time** - Update data otomatis dengan Firebase
+- 📱 **Responsive** - Optimal di semua device
 
-📊 Rating System - Penilaian 1-5 untuk kinerja KMK
+## 🏗️ Tech Stack
+**Frontend:**
+- React.js 18.2.0
+- Tailwind CSS 3.1.8  
+- React Router DOM 6.3.0
 
-⚡ Real-time - Update data otomatis dengan Firebase
+**Backend:**
+- Firebase Firestore (Database)
+- Firebase Authentication (Login Admin)
+- Firebase Hosting (Deployment)
 
-📱 Responsive - Optimal di semua device
+---
 
-🏗️ Tech Stack
-Frontend:
+## ⚡ Quick Start
 
-React.js 18.2.0
+### Prerequisites
+- Node.js 14+
+- npm atau yarn
+- Akun Firebase
 
-Tailwind CSS 3.1.8
-
-React Router DOM 6.3.0
-
-Backend:
-
-Firebase Firestore (Database)
-
-Firebase Authentication (Login Admin)
-
-Firebase Hosting (Deployment)
-
-⬆️ Back to top
-
-Installation
-Prerequisites
-Node.js version 14 atau lebih tinggi
-
-npm atau yarn
-
-Akun Firebase
-
-🚀 Quick Start
-bash
+### Installation
+```bash
 # Clone repository
 git clone https://github.com/RAsertaCK/Project-A.git
 cd Project-A
@@ -61,25 +51,25 @@ npm install
 
 # Jalankan development server
 npm start
-🔧 Setup Firebase
-Buat Firebase Project:
-
+🔥 Firebase Setup
+1. Buat Project Firebase
 Buka Firebase Console
 
-Klik "Create Project" - beri nama "ASMAKA"
+Klik "Create Project"
+
+Beri nama "ASMAKA"
 
 Ikuti setup wizard
 
-Aktifkan Services:
-
+2. Aktifkan Layanan
 Authentication → Sign-in method → Enable Email/Password
 
 Firestore Database → Create Database → Start in test mode
 
-Tambahkan admin user di Authentication → Users
+Authentication → Users → Add user (email admin)
 
-Environment Variables:
-Buat file .env.local di root project:
+3. Environment Variables
+Buat file .env.local:
 
 env
 REACT_APP_FIREBASE_API_KEY=your_api_key
@@ -88,132 +78,112 @@ REACT_APP_FIREBASE_PROJECT_ID=your-project-id
 REACT_APP_FIREBASE_STORAGE_BUCKET=your-project.appspot.com
 REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
 REACT_APP_FIREBASE_APP_ID=your_app_id
-⬆️ Back to top
+4. Firebase Config
+src/firebase/config.js:
 
-Usage
-👤 Untuk Pengguna Biasa
-Akses Aplikasi:
+javascript
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
 
-Buka https://asmaka-c22de.web.app
+const firebaseConfig = {
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID
+};
 
-Atau http://localhost:3000 (development)
+const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);
+export const auth = getAuth(app);
+👨‍💻 Usage
+Untuk Pengguna
+Akses: https://asmaka-c22de.web.app atau http://localhost:3000
 
-Kirim Aspirasi:
+Kirim Aspirasi: Klik "Kirim Aspirasi" → Isi form → Submit
 
-Klik "Kirim Aspirasi" di navbar
+Lihat Aspirasi: Buka halaman utama untuk lihat yang approved
 
-Isi semua field form dengan jujur
+Untuk Admin
+Login: Akses /admin → Login dengan email/password
 
-Klik "Kirim Aspirasi" - status: pending
+Moderasi: Lihat aspirasi pending → Approve/Reject
 
-Lihat Aspirasi:
+Management: Filter, hapus, dan pantau statistics
 
-Buka halaman utama
-
-Lihat aspirasi yang sudah disetujui admin
-
-🔐 Untuk Administrator
-Login Admin:
-
-Akses /admin di browser
-
-Login dengan email/password admin
-
-Masuk ke dashboard moderasi
-
-Moderasi Aspirasi:
-
-Lihat daftar aspirasi pending
-
-Klik "Lihat" untuk baca detail
-
-Approve/Reject dengan tombol aksi
-
-Aspirasi approved akan tampil di publik
-
-Management Data:
-
-Filter by status (all, pending, approved, rejected)
-
-Hapus aspirasi jika diperlukan
-
-Pantau statistics sederhana
-
-⬆️ Back to top
-
-Deployment
-🚀 Firebase Hosting
+🚀 Deployment
+Firebase Hosting
 bash
-# Build production version
+# Build production
 npm run build
 
 # Install Firebase CLI
 npm install -g firebase-tools
 
-# Login dan deploy
+# Deploy
 firebase login
 firebase init hosting
 firebase deploy
-🔒 Production Checklist
+Security Rules
+javascript
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /aspirations/{document} {
+      allow read: if true;
+      allow write: if request.auth != null && 
+        request.auth.token.admin == true;
+    }
+  }
+}
+Production Checklist
 Firebase Security Rules updated
 
 Environment variables configured
 
 Admin user created
 
-Test semua functionality
+All functionality tested
 
-🌐 Custom Domain (Optional)
-Buka Firebase Console → Hosting
-
-Add custom domain
-
-Update DNS records
-
-⬆️ Back to top
+Build success tanpa error
 
 🤝 Contributing
-Kontribusi dipersilakan! Ikuti steps:
-
-Fork repository
-
-Buat feature branch:
-
 bash
+# Buat branch baru
 git checkout -b feature/nama-feature
-Commit changes:
 
-bash
-git commit -m 'Add nama feature'
-Push ke branch:
+# Commit changes  
+git commit -m 'feat: add nama feature'
 
-bash
+# Push branch
 git push origin feature/nama-feature
-Buat Pull Request
+
+# Buat Pull Request
+Commit Convention
+feat: New feature
+
+fix: Bug fix
+
+docs: Documentation
+
+style: Formatting
+
+refactor: Code restructuring
 
 📄 License
 MIT License - bebas digunakan untuk personal dan komersial.
 
 👨‍💻 Developer
 RAsertaCK
-
 GitHub: https://github.com/RAsertaCK
-
 Project: https://github.com/RAsertaCK/Project-A
-
-🙏 Acknowledgments
-React.js Team untuk framework yang amazing
-
-Tailwind CSS untuk utility-first CSS
-
-Firebase Team untuk backend services
-
-KMK Community untuk inspirasi
 
 <div align="center">
 ❓ Butuh Bantuan?
-Buka GitHub Issues untuk report bugs atau request features.
+Buka GitHub Issues untuk report bug atau request feature.
 
 ⭐ Jangan lupa kasih star jika project ini membantu!
 
-</div>
+</div> ```
